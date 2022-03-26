@@ -202,7 +202,7 @@ const Section = styled.div`
   padding:20px 30px;
   flex-wrap:wrap;
   @media (max-width: 600px) {
-    padding-left:40px;   
+    padding:10px 40px;   
   }
 `;
 
@@ -247,6 +247,9 @@ const Search = styled.div`
     padding:10px 10px;
     @media (max-width: 600px) {
       width:75%;
+    }
+    :focus{
+      outline:none;
     }
   }
 `;
