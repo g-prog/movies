@@ -186,7 +186,6 @@ const Container = styled.div`
         left:30px;
         @media (max-width: 768px) {
           font-size:15px;
-          top:40px;
         }
       }
     }
