@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
     fetchMovies()
-  }, [])
+  })
 
   const searchMovies = (searchValue) => {
     setSearchInput(searchValue)
@@ -75,27 +75,25 @@ function App() {
 
       <Section>
       {searchInput && searchInput.length > 1 
-      ? filtered && filtered.map(({imdbID, Title, Year, Poster}) => (
+      ? filtered && filtered.map(({imdbID, Title, Poster}) => (
           <Container>
             <div className='items'>
             <div key={imdbID} className='results'>
               <div className='overlay'></div>
                 <img src={Poster} alt="poster-img"/>
                 <h2>{Title}</h2>
-                <h3>{Year}</h3>
               </div>
           </div>
           </Container> 
       
     ))
-  : Movies.Search && Movies.Search.map(({ imdbID, Title, Year, Poster, Type}) => (  
+  : Movies.Search && Movies.Search.map(({ imdbID, Title,  Poster, Type}) => (  
         <Container>
           <div className='items'>
             <div key={imdbID} className='results'>
             <div className='overlay'></div>
               <img src={Poster} alt="poster-img"/>
               <h2>{Title}</h2>
-              <h3>{Year}</h3>
             </div>
           </div>
       </Container>
@@ -196,6 +194,11 @@ const Section = styled.div`
   justify-content:space-between;
   padding:20px 30px;
   flex-wrap:wrap;
+  @media (max-width: 600px) {
+    padding-left:40px;
+
+      
+  }
 `;
 
 const Background = styled.div`
@@ -209,9 +212,9 @@ const Background = styled.div`
     height:282px;
     font-family: DM Sans;
 
-    @media (max-width: 480px) {
+    @media (max-width: 600px) {
       top:60px;
-      left:100px;
+      left:80px;
       width:200px;
       line-height:85px;
     }
