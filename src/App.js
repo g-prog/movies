@@ -140,9 +140,6 @@ const Container = styled.div`
     display: flex;
     align-items:center;
     justify-content:space-between;
-    
-    
-    
     .results{
       margin-top:30px;
       position:relative;
@@ -155,6 +152,11 @@ const Container = styled.div`
         height:300px;
         opacity:0.5;
         border-radius:10px;
+        @media (max-width: 768px) {
+          width:150px;
+          height:150px;
+        }
+
         @media (max-width: 600px) {
           width:200px;
           height:200px;
@@ -166,6 +168,11 @@ const Container = styled.div`
         width:300px;
         height:300px;
         border-radius:10px;
+        @media (max-width: 768px) {
+          width:150px;
+          height:150px;
+        }
+
         @media (max-width: 600px) {
           width:200px;
           height:200px;
@@ -177,8 +184,9 @@ const Container = styled.div`
         color:white;
         top:70px;
         left:30px;
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
           font-size:15px;
+          top:40px;
         }
       }
     }
@@ -195,9 +203,7 @@ const Section = styled.div`
   padding:20px 30px;
   flex-wrap:wrap;
   @media (max-width: 600px) {
-    padding-left:40px;
-
-      
+    padding-left:40px;   
   }
 `;
 
@@ -240,14 +246,9 @@ const Search = styled.div`
     border: 1px solid #000000;
     width:85%;
     padding:10px 10px;
+    @media (max-width: 600px) {
+      width:75%;
+    }
   }
-  
-
-  @media (max-width: 600px) {
-    
-  }
-
-  
- 
 `;
 
