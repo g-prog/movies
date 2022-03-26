@@ -5,7 +5,7 @@ import axios from 'axios';
 import "./App.css"
 
 function App() {
-  const endpoint = `http://www.omdbapi.com/?s=batman&apikey=79d2cb25`
+  const endpoint = `https://www.omdbapi.com/?s=batman&apikey=79d2cb25`
 
   const [Movies, setMovies] = useState([])
   const [filtered, setFiltered] = useState([])
@@ -38,7 +38,7 @@ function App() {
   }
 
   useEffect(() => {
-    const { data } = axios.get('http://www.omdbapi.com/?s=batman&apikey=79d2cb25',
+    const { data } = axios.get('https://www.omdbapi.com/?s=batman&apikey=79d2cb25',
     {
       
     });
