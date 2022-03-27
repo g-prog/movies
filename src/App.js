@@ -10,11 +10,13 @@ function App() {
   const [Movies, setMovies] = useState([])
   const [filtered, setFiltered] = useState([])
   const [searchInput, setSearchInput] = useState("")
+  const [Loading, setLoading] = useState(true)
 
   const fetchMovies = async () => {
     const res = await fetch(endpoint)
     const data = await res.json()
     setMovies(data)
+    setLoading(false)
   }
 
   useEffect(() => {
@@ -58,7 +60,7 @@ function App() {
       <Background>
        <img src="assets/Rectangle 5.png"  alt="background-img"/>
        <div className="text">
-          <p>Watch <br/> something <br/> incredible.</p>
+          <p>Watch  something  incredible.</p>
        </div>
       </Background>
 
@@ -73,8 +75,7 @@ function App() {
 
       </Search> 
       
-
-      <Section>
+      {Loading ? <h2>Loading Batman Categories...</h2> : <Section>
       {searchInput && searchInput.length > 1 
       ? filtered && filtered.map(({imdbID, Title, Poster}) => (
           <Container>
@@ -104,7 +105,8 @@ function App() {
       
      
      ))}
-      </Section>
+      </Section>}
+      
     </div>
   );
 }
@@ -226,10 +228,11 @@ const Background = styled.div`
     font-family: DM Sans;
 
     @media (max-width: 600px) {
-      top:60px;
-      left:80px;
-      width:200px;
-      line-height:85px;
+      top:100px;
+      left:60px;
+      width:80%;
+      line-height:36.46px;
+      text-align:center;
     }
 
     p{
@@ -237,7 +240,7 @@ const Background = styled.div`
       font-size:72px;
       font-weight:700;
       @media (max-width: 600px) {
-        font-size:42px;
+        font-size:28px;
       }
 
     }
