@@ -72,31 +72,36 @@ function App() {
         onChange={(e) => searchMovies(e.target.value)}/>
 
       </Search> 
+      
 
       <Section>
       {searchInput && searchInput.length > 1 
       ? filtered && filtered.map(({imdbID, Title, Poster}) => (
           <Container>
             <div className='items'>
-            <div key={imdbID} className='results'>
-              <div className='overlay'></div>
-                <img src={Poster} alt="poster-img"/>
-                <h2>{Title}</h2>
+             <div key={imdbID} className='results'>
+                <div className='overlay'></div>
+                  <img src={Poster} alt="poster-img"/>
+                  <h2>{Title}</h2>
               </div>
-          </div>
+              </div>
           </Container> 
       
     ))
-  : Movies.Search && Movies.Search.map(({ imdbID, Title,  Poster, Type}) => (  
+  : Movies.Search && Movies.Search.map(({ imdbID, Title,  Poster, Type}) => ( 
+      <>
         <Container>
           <div className='items'>
             <div key={imdbID} className='results'>
             <div className='overlay'></div>
               <img src={Poster} alt="poster-img"/>
               <h2>{Title}</h2>
+              <h3> Category: {Type}</h3>
             </div>
           </div>
       </Container>
+      </>
+      
      
      ))}
       </Section>
@@ -131,9 +136,6 @@ const Nav = styled.div`
 `;
 
 const Container = styled.div`
-  display: flex;
-  align-items:center;
-  justify-content:space-between;
   padding:20px 30px;
 
   .items{
@@ -184,6 +186,12 @@ const Container = styled.div`
         color:white;
         top:70px;
         left:30px;
+        @media (max-width: 768px) {
+          font-size:15px;
+        }
+      }
+      h3{
+        margin-left:10px;
         @media (max-width: 768px) {
           font-size:15px;
         }
