@@ -229,7 +229,7 @@ const Background = styled.div`
 
     @media (max-width: 600px) {
       top:100px;
-      left:60px;
+      left:40px;
       width:80%;
       line-height:36.46px;
       text-align:center;
