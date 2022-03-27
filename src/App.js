@@ -228,7 +228,7 @@ const Background = styled.div`
     font-family: DM Sans;
 
     @media (max-width: 600px) {
-      top:100px;
+      top:130px;
       left:40px;
       width:80%;
       line-height:36.46px;
